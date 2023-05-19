@@ -1,0 +1,23 @@
+<div class="container-fluid mt-4 pt-5">
+    <p>blog works</p>
+
+    <form [formGroup]="searchForm" (ngSubmit)="searchArticles(searchForm.value)">
+        <div class="row">
+          <div class="col input-group">
+            <input type="text" placeholder="Search.." name="search" formControlName="search" class="form-control">
+  
+            <div class="input-group-append">
+  
+              <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <ul>
+        <li *ngFor="let result of searchResults">
+          <h3>{{ result.title }}</h3>
+          <p>Author: {{ result.author }}</p>
+          <p>Description: {{ result.description }}</p>
+        </li>
+      </ul>
+</div>
