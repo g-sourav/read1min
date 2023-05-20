@@ -11,7 +11,7 @@ export class NavBarDetailsComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['navbar/blog/desh-aysae-banega'])
+    this.router.navigate(['navbar/blog'])
   }
 
 }

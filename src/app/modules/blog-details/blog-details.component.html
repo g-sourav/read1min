@@ -1,23 +1,28 @@
 <div class="container-fluid mt-4 pt-5">
-    <p>blog works</p>
 
-    <form [formGroup]="searchForm" (ngSubmit)="searchArticles(searchForm.value)">
         <div class="row">
-          <div class="col input-group">
-            <input type="text" placeholder="Search.." name="search" formControlName="search" class="form-control">
+          <div class="col">
+            <input  [(ngModel)]="searchText" placeholder="" autocomplete="off" (input)="onSearchText()">
   
-            <div class="input-group-append">
+            <!-- <div >
   
               <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
-            </div>
+            </div> -->
           </div>
         </div>
-      </form>
       <ul>
         <li *ngFor="let result of searchResults">
           <h3>{{ result.title }}</h3>
-          <p>Author: {{ result.author }}</p>
-          <p>Description: {{ result.description }}</p>
+          <p>Author: {{ result.publishBy}}</p>
+          <p>Description: {{ result.date }}</p>
+          <button (click)="readMore(result)">readmmore</button>
+
+          <!-- <img src="assets/{{result.dataPath}}/title.jpg"/> -->
+
         </li>
       </ul>
+</div>
+
+<div *ngIf="isOnC">
+<router-outlet></router-outlet>
 </div>

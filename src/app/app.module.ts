@@ -7,20 +7,23 @@ import { NavBarDetailsComponent } from './nav-bar-details/nav-bar-details.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogDetailsComponent } from './modules/blog-details/blog-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlogPageComponent } from './modules/blog-page/blog-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarDetailsComponent,
     DashboardComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
+    BlogPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

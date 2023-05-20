@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import Fuse from 'fuse.js';
+import { SharedBlogDataService } from '../shared-blog-data.service';
+import { BlogDetail, BlogDetailsList } from 'src/app/model/blog_data';
+//import FuzzySearch from "fuzzy-search";
+
 
 @Component({
   selector: 'app-blog-details',
@@ -14,23 +19,16 @@ export class BlogDetailsComponent implements OnInit {
   titleJson!: any;
   titleChar! : any;
   searchResults: any[] = [];
-  items: any[] = [
-    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', description: 'A classic novel about the Jazz Age' },
-    { title: 'To Kill a Mockingbird', author: 'Harper Lee', description: 'A story about racial injustice' },
-    { title: 'Pride and Prejudice', author: 'Jane Austen', description: 'A romantic novel set in 19th-century England' },
+  isOnC: Boolean=true;
+  url: string="";
+  public searchText: string="";
+  public result: [] = [];
+  blogDetails: Array<BlogDetail> = BlogDetailsList;
+  htmlData: string = '<p>Unable to load</p>';
 
-    { title: 'Prejudice', author: 'Jane Austen', description: 'A romantic novel set in 19th-century England' },
+  @Output () total = new EventEmitter<BlogDetail>();
 
-    { title: 'Rest in p', author: 'Jane Austen', description: 'A romantic novel set in 19th-century England' },
-
-    { title: 'cricket', author: 'Jane Austen', description: 'A romantic novel set in 19th-century England' },
-
-    { title: 'football', author: 'Jane Austen', description: 'A romantic novel set in 19th-century England' },
-
-    { title: 'movie', author: 'Jane Austen', description: 'A romantic novel set in 19th-century England' },
-    // Add more sample items as needed
-  ];
-  constructor(private formBuilder: FormBuilder,private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder,private http: HttpClient,private router: Router, private sharedBlogData: SharedBlogDataService) {
    }
 
 
@@ -39,7 +37,49 @@ export class BlogDetailsComponent implements OnInit {
       search: new FormControl()
     });
   }
-  fullName: string="asdfg dc c scsc";
+
+  readMore(blogDetail1: BlogDetail){
+    this.sharedBlogData.blogDetail= blogDetail1;
+    this.url="navbar/blog/page/"+this.sharedBlogData.blogDetail.title.replace(" ","-");
+    this.router.navigate([this.url]);
+    this.sharedBlogData.isSearchOff=true;
+    this.isOnC=true;
+    this.searchResults=[];
+  }
+  onSearchText() {
+    this.sharedBlogData.isSearchOff=false;
+    this.isOnC=false;
+    console.log("is on   :  "+this.sharedBlogData.isSearchOff);
+    const options = {
+      includeScore: true,
+      keys: ["title", "publishBy", "date","topic","subTopics"],
+    };
+  
+    const fuse = new Fuse(this.blogDetails, options);
+    const result = fuse.search(this.searchText);
+
+    this.searchResults = result.map((item) => item.item);
+
+    console.log("res :  "+this.searchResults[0]);
+
+  //   for (let index = 0; index < this.searchResults.length; index++) {
+
+  //   let path = 'assets/' + this.searchResults + '.html';
+  //   this.http.get(path, {responseType: "text"}).subscribe(
+  //   data => {
+  //     this.htmlData= data;
+  //   });
+
+  // }
+
+   // this.result = this.searcher.search(this.searchText);
+   // console.log(this.searchText, ": ", this.result);
+  }
+
+  // searcher = new FuzzySearch(this.blogDetails, ["title", "publishBy", "date","topic","subTopics"], {
+  //   caseSensitive: false
+  // });
+
 
   searchArticles(source: string) {
     source= JSON.stringify(source).replace("{\"search\":\"","");
@@ -59,16 +99,16 @@ export class BlogDetailsComponent implements OnInit {
     });
     console.log("search starts :  "+source);
 
-    const options = {
-      includeScore: true,
-      keys: ['title', 'author', 'description'],
-    };
+    // const options = {
+    //   includeScore: true,
+    //   keys: ['title', 'author', 'description'],
+    // };
   
-    const fuse = new Fuse(this.items, options);
-    const result = fuse.search(source);
+    // const fuse = new Fuse(this.items, options);
+    // const result = fuse.search(source);
 
-    this.searchResults = result.map((item) => item.item);
+    // this.searchResults = result.map((item) => item.item);
 
-    console.log("res :  "+this.searchResults[0]);
+    // console.log("res :  "+this.searchResults[0]);
   }
 }
