@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css"; 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:500,700,900&display=swap');
 
 .logo{
     color: white;
@@ -12,3 +14,4 @@ input:focus {
     border-color: #cfdc00;
     box-shadow: 0 0 5px rgba(207, 220, 0, 0.4);
 }
+

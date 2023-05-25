@@ -1,7 +1,35 @@
+<div class="container-fluid mt-4 pt-5">
 
-<div *ngIf="isOn">
+    <div class="container ">
+        <form [formGroup]="searchForm" (ngSubmit)="searchArticles(searchForm.value)">
+          <div class="row">
+            <div class="col input-group">
+              <input type="text" placeholder="Search.." name="search" formControlName="search" class="form-control">
+    
+              <div class="input-group-append">
+    
+                <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+    <div class="container mt-4">
 
-    <h3>{{ blogDetail1.title }}</h3>
 
-<div [innerHTML]="htmlData"></div>
+      <span>
+        <span *ngFor="let result of navigationPath; ; let last = last ; let first = first; ">
+            <a *ngIf="!first" href="javascript:void(0)" href="javascript:void(0)" (click)="onBlog(result)">{{result}}</a> 
+            <span  *ngIf="!last && !first">/</span>
+        </span>
+      </span>
+
+
+
+    <h3>{{ blogDetail1.fulltitle }}</h3>
+
+<div [innerHTML]="htmlData | safeHtml"></div>
+
+</div>
+
 </div>

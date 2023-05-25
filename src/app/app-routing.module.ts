@@ -6,26 +6,34 @@ import { BlogDetailsComponent } from './modules/blog-details/blog-details.compon
 import { BlogPageComponent } from './modules/blog-page/blog-page.component';
 
 const routes: Routes = [
-  {
-    path: 'navbar',
-    component:NavBarDetailsComponent,
-    children: [
+  // {
+  //   path: '',
+  //   component:NavBarDetailsComponent,
+  //   children: [
       {
         path: 'dashboard',
         component: DashboardComponent
       },
       {
-        path: 'blog',
+        path: 'page/:id',
+        component: BlogPageComponent
+      },
+      {
+        path: 'blog/:id',
+        component: BlogDetailsComponent
+      },
+      {
+        path: '',
         component: BlogDetailsComponent,
         children:[
           {
-            path: 'page/:id',
-            component: BlogPageComponent
+            path: 'blog/:search',
+            component: BlogDetailsComponent
           }
         ]
       }
-    ]
-  }
+    //]
+  //}
 ];
 
 @NgModule({

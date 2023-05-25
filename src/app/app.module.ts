@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlogDetailsComponent } from './modules/blog-details/blog-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogPageComponent } from './modules/blog-page/blog-page.component';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { SharedBlogDataService } from './modules/shared-blog-data.service';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,7 @@ import { BlogPageComponent } from './modules/blog-page/blog-page.component';
     NavBarDetailsComponent,
     DashboardComponent,
     BlogDetailsComponent,
-    BlogPageComponent
+    BlogPageComponent,SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { BlogPageComponent } from './modules/blog-page/blog-page.component';
     ReactiveFormsModule,
     FormsModule 
   ],
-  providers: [],
+  providers: [SharedBlogDataService,{ provide: LocationStrategy, useClass: HashLocationStrategy },
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

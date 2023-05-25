@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,6 @@ export class AppComponent implements OnInit {
   title = 'read1min';
   constructor(private router: Router) { }
   ngOnInit() {
-    this.router.navigate(['navbar']);
+    //this.router.navigate(['']);
   }
 }

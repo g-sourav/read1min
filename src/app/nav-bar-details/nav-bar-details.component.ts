@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar-details',
@@ -8,10 +8,12 @@ import { Route, Router } from '@angular/router';
 })
 export class NavBarDetailsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.router.navigate(['navbar/blog'])
+    console.log("in on : "+ this.route.snapshot.component?.toString);
+ 
+    //this.router.navigate(['blog'])
   }
 
 }
