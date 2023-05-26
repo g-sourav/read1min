@@ -54,13 +54,13 @@ export class BlogDetailsComponent implements OnInit {
   }
   copyMessage(shareLinkBlog: BlogDetail){
     this.pathVal= ((shareLinkBlog.dataPath).toLowerCase().split("/")).length -1;
-    this.navUrl ="https://www.read1min.co.uk/#/page/"+shareLinkBlog.id+"~"+"null"+"~"+((shareLinkBlog.dataPath).toLowerCase().split("/"))[this.pathVal-1];
+    this.navUrl ="https://www.factyard.com/#/page/"+shareLinkBlog.id+"~"+"null"+"~"+((shareLinkBlog.dataPath).toLowerCase().split("/"))[this.pathVal-1];
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value ='Hey I found this awesome article on '+shareLinkBlog.title+' on read1min : '+ this.navUrl;
+    selBox.value ='Hey I found this awesome article on '+shareLinkBlog.title+' on factyard : '+ this.navUrl;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
