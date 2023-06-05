@@ -10,9 +10,7 @@ export class NavBarDetailsComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    console.log("in on : "+ this.route.snapshot.component?.toString);
- 
+  ngOnInit(): void { 
     //this.router.navigate(['blog'])
   }
 

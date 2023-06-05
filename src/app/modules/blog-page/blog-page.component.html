@@ -1,35 +1,149 @@
-<div class="container-fluid mt-4 pt-5">
+<app-nav-bar-details></app-nav-bar-details>
 
-    <div class="container ">
-        <form [formGroup]="searchForm" (ngSubmit)="searchArticles(searchForm.value)">
-          <div class="row">
-            <div class="col input-group">
-              <input type="text" placeholder="Search.." name="search" formControlName="search" class="form-control">
-    
-              <div class="input-group-append">
-    
-                <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+<div class="container-fluid mt-4 pt-5">
+  <div class="container">
+    <form
+      [formGroup]="searchForm"
+      (ngSubmit)="searchArticles(searchForm.value)"
+    >
+      <div class="row">
+        <div class="col input-group">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            formControlName="search"
+            class="form-control"
+          />
+
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-success">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container mt-4">
+    <div class="  navpath ">
+      <span
+        *ngFor="
+          let result of navigationPath;
+          let last = last;
+          let first = first;
+          let i = index
+        "
+      >
+        <a *ngIf="!first && !last" href="/#/blog/{{ result }}">{{ result }}</a>
+        <span *ngIf="last">{{ blogDetail1.title }}</span>
+        <a *ngIf="first" href="/#/">{{ result }}</a>
+
+        <span *ngIf="!last"> / </span>
+      </span>
+    </div>
+    <div *ngIf="isload" class="row" >
+      <div class="col-4">
+      </div>
+      <div class="col-2">
+        <img alt="" src="assets/loader.gif" style="text-align:center ; padding: 2px; height:100px; width:100px" />
+    </div>    
+  </div>
+    <div *ngIf="!isload" class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h4>{{ blogDetail1.fulltitle }}</h4>
+            <small class="text-muted"
+              >Published on: {{ blogDetail1.date }}</small
+            >
+
+            <div class="card-text mt-2">
+              <div [innerHTML]="htmlData | safeHtml"></div>
+            </div>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+            <div class="ssbats-social-share">
+              <span class="ssbats-social-share-label">Share on:</span>
+              <div class="ssbats-social-share-buttons">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u={{ url }}{{
+                    blogDetail1.id
+                  }}"
+                  target="”_blank”"
+                  class="ssbats-share-facebook ssbats-share-popup"
+                  ><span>facebook</span></a
+                >
+                <a
+                  href="https://www.twitter.com/intent/tweet?url={{ url }}{{
+                    blogDetail1.id
+                  }}&via=i_Genius"
+                  target="”_blank”"
+                  class="ssbats-share-twitter ssbats-share-popup"
+                  ><span>twitter</span></a
+                >
+                <a
+                  href="https://www.linkedin.com/shareArticle?mini=true&url={{
+                    url
+                  }}{{ blogDetail1.id }}"
+                  target="”_blank”"
+                  class="ssbats-share-linkedin ssbats-share-popup"
+                  ><span>linkedin</span></a
+                >
+                <a
+                  href="https://tumblr.com/widgets/share/tool?canonicalUrl=URL_HERE"
+                  target="”_blank”"
+                  class="ssbats-share-tumblr ssbats-share-popup"
+                  ><span>tumblr</span></a
+                >
+                <a
+                  href="https://www.reddit.com/submit?url={{ url }}{{
+                    blogDetail1.id
+                  }}"
+                  target="”_blank”"
+                  class="ssbats-share-reddit ssbats-share-popup"
+                  ><span>reddit</span></a
+                >
+                <a
+                  href="https://api.whatsapp.com/send?text={{ url }}{{
+                    blogDetail1.id
+                  }}"
+                  target="”_blank”"
+                  class="ssbats-share-whatsapp"
+                  ><span>whatsapp</span></a
+                >
+                <a
+                  href="https://telegram.me/share/url?url={{ url }}{{
+                    blogDetail1.id
+                  }}"
+                  target="”_blank”"
+                  class="ssbats-share-telegram ssbats-share-popup"
+                  ><span>telegram</span></a
+                >
+                <a
+                  href="https://getpocket.com/save?url={{ url }}{{
+                    blogDetail1.id
+                  }}"
+                  target="”_blank”"
+                  class="ssbats-share-pocket ssbats-share-popup"
+                  ><span>pocket</span></a
+                >
               </div>
             </div>
+            <!-- Share Widget Ends Here -->
+            <!-- Pinterest share button script -->
+            <!-- <script async defer src="assets/socialshare.js"></script> -->
+
+            <h3></h3>
           </div>
-        </form>
+        </div>
+      </div>
     </div>
-    <div class="container mt-4">
-
-
-      <span>
-        <span *ngFor="let result of navigationPath; ; let last = last ; let first = first; ">
-            <a *ngIf="!first" href="javascript:void(0)" href="javascript:void(0)" (click)="onBlog(result)">{{result}}</a> 
-            <span  *ngIf="!last && !first">/</span>
-        </span>
-      </span>
-
-
-
-    <h3>{{ blogDetail1.fulltitle }}</h3>
-
-<div [innerHTML]="htmlData | safeHtml"></div>
-
+  </div>
+  <!--Scroll to top-->
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+  <button (click)="scrollToTop()">
+      <i class="fa fa-arrow-up"></i>
+  </button>
 </div>
-
 </div>

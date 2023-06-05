@@ -7,9 +7,9 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'read1min';
+  title = 'FactYard';
   constructor(private router: Router) { }
   ngOnInit() {
-    //this.router.navigate(['']);
+   // this.router.navigate(['blog']);
   }
 }
