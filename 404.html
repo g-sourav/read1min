@@ -10,11 +10,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore a vast collection of informative and engaging articles on a variety of topics. Gain valuable insights, expand your knowledge, and discover thought-provoking content on science, technology, lifestyle, health, and more.">
   <link rel="icon" type="image/x-icon" href="assets/favicon3.png">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script> -->
+<script>
+var popup;
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   //set revokeBtn if you don't want to see a tiny pullup bar overlapping your website
+   //if revokeBtn is set, make sure to include a link to cookie settings in your footer
+   //you can open your banner again with: popup.open();
+   //revokeBtn: "<div class='cc-revoke'></div>",
+   type: "Implied Consent (opt-out)",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#198754",
+           text: "#000"
+        },
+    },
+    
+    content: {
+    "message": "This website utilizes cookies to gather insights on your interaction with our site, enhancing your browsing experience, and providing analytical metrics for both this website and other media. The collected data is anonymized and doesn’t identify you personally. By continuing to use this website, you consent to the use of cookies by Google Analytics. To find out more about the cookies we use, see our ",
+    "link": "Privacy Policy.",
+    "href": "https://cookiesandyou.com",
+    "policy": "Cookie Policy",
+    "cookieconsent_dismissed": "yes"
+  },
+    onInitialise: function(status) {
+      // request gtag.js on page-load when the client already consented
+      if(status == cookieconsent.status.allow) setCookies();
+    },
+    onStatusChange: function(status) {
+      // resquest gtag cookies on a new consent
+      if (this.hasConsented()) setCookies();
+      else deleteCookies(this.options.cookie.name)
+    },
+/* enable this to hide the cookie banner outside GDPR regions
+    law: {
+      regionalLaw: false,
+    },
+    location: true,
+    },
+*/
+    function (p) {
+        popup = p;
+    }
+  })
+});
+
+//it is absolutely crucial to define gtag in the global scope
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-058C2GFCEQ', {'anonymize_ip': true});
+
+function setCookies() {
+    var s = document.createElement('script');
+    s.type = "text/javascript"
+    s.async = "true";
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-058C2GFCEQ";
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+
+    // you can add facebook-pixel and other cookies here
+};
+
+function deleteCookies(cookieconsent_name) {
+        var keep = [cookieconsent_name, "DYNSRV"];
+
+        document.cookie.split(';').forEach(function(c) {
+            c = c.split('=')[0].trim();
+            if (!~keep.indexOf(c))
+                document.cookie = c + '=;' + 'expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
+        });
+};
+</script>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6468410229386783" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="styles.d308d089dd3ca4d54823.css"></head>
 
 <body>
   <app-root></app-root>
-<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.daf8130ab8f17a1b6340.js" defer></script><script src="scripts.df6aa4c57c0545a6eef7.js" defer></script><script src="main.9e1b5a2d6053a2ff1edd.js" defer></script></body>
+<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.daf8130ab8f17a1b6340.js" defer></script><script src="scripts.df6aa4c57c0545a6eef7.js" defer></script><script src="main.48c8eafe185cd2ef9857.js" defer></script></body>
  <!-- Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-058C2GFCEQ"></script>
@@ -29,5 +113,5 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
-
+  
 </html>
