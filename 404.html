@@ -35,6 +35,9 @@ window.addEventListener('load', function(){
            background: "#198754",
            text: "#000"
         },
+      theme: "edgeless",
+      position: "bottom-left",
+
     },
     
     content: {
@@ -44,11 +47,16 @@ window.addEventListener('load', function(){
     "policy": "Cookie Policy",
     "cookieconsent_dismissed": "yes"
   },
+  
     onInitialise: function(status) {
       // request gtag.js on page-load when the client already consented
       if(status == cookieconsent.status.allow) setCookies();
     },
     onStatusChange: function(status) {
+      var cookieConsentBanner = document.querySelector(".cc-window");
+                    if (cookieConsentBanner) {
+                        cookieConsentBanner.style.display = "none";
+                    }
       // resquest gtag cookies on a new consent
       if (this.hasConsented()) setCookies();
       else deleteCookies(this.options.cookie.name)
@@ -98,7 +106,7 @@ function deleteCookies(cookieconsent_name) {
 
 <body>
   <app-root></app-root>
-<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.daf8130ab8f17a1b6340.js" defer></script><script src="scripts.df6aa4c57c0545a6eef7.js" defer></script><script src="main.48c8eafe185cd2ef9857.js" defer></script></body>
+<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.daf8130ab8f17a1b6340.js" defer></script><script src="scripts.df6aa4c57c0545a6eef7.js" defer></script><script src="main.d1e32a4f09955b4caa08.js" defer></script></body>
  <!-- Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-058C2GFCEQ"></script>
