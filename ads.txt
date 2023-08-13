@@ -1,2 +1,2 @@
-domain.com, factyard.com, www.factyard.com, *.factyard.com
-google.com, pub-6468410229386783 , DIRECT
+google.com, pub-6468410229386783, DIRECT, f08c47fec0942fa0
+
