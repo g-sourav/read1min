@@ -5,7 +5,6 @@
 User-agent: *
 Disallow: /admin
 Disallow: /api
-Disallow: /sitemap.xml
 
 # Allow Google AdSense to crawl all pages.
 Allow: /
