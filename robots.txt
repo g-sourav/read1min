@@ -3,8 +3,6 @@
 # This file tells search engines which parts of your website they can and cannot crawl.
 
 User-agent: *
-Disallow: /admin
-Disallow: /api
+Disallow: 
 
-# Allow Google AdSense to crawl all pages.
-Allow: /
+Sitemap: https://www.factyard.com/sitemap.xml
