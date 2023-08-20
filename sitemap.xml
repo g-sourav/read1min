@@ -203,6 +203,12 @@
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
+     <url>
+    <loc>https://www.factyard.com/#/blog/page/17</loc>
+    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.factyard.com/#/blog/page/14~Celebrate%20Independence%20Day%20with%20the%20Har%20Ghar%20Tiranga%20Campaign</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
@@ -210,13 +216,19 @@
     <priority>0.8</priority>
   </url>
     <url>
-    <loc>https://www.factyard.com/#/blog/page/14~Preserving%20Intimacy:%20The%20Ever-Changing%20Landscape%20of%20Privacy</loc>
+    <loc>https://www.factyard.com/#/blog/page/15~Preserving%20Intimacy:%20The%20Ever-Changing%20Landscape%20of%20Privacy</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
     <url>
-    <loc>https://www.factyard.com/#/blog/page/14~Tech's%20Influence:%20Love%20Languages%20from%20Millennials%20to%20Gen%20Z</loc>
+    <loc>https://www.factyard.com/#/blog/page/16~Tech's%20Influence:%20Love%20Languages%20from%20Millennials%20to%20Gen%20Z</loc>
+    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://www.factyard.com/#/blog/page/17~From%20Tap%20to%20Sparkle:%20Navigating%20Water%20Choices%20for%20Wellness%20and%20Vitality</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
