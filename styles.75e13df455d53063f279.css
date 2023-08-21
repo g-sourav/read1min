@@ -4,7 +4,7 @@
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */body{-webkit-tap-highlight-color:rgba(0,0,0,0)}.carousel-control-next,.carousel-control-prev,.nav-pills .nav-link,.nav-tabs .nav-link{background:none}.logo{color:#fff}.navbtn{padding:10px;font-size:15px}input:focus{border-color:#cfdc00;box-shadow:0 0 5px #cfdc0066}
+ */body{-webkit-tap-highlight-color:rgba(0,0,0,0)}.carousel-control-next,.carousel-control-prev,.nav-pills .nav-link,.nav-tabs .nav-link{background:none}.logo{color:#fff}.navbtn{padding:10px;font-size:15px}input:focus{border-color:#cfdc00;box-shadow:0 0 5px #cfdc0066}.scroll-to-top{position:fixed;bottom:15px;right:15px;opacity:0;color:#0077b5}.scroll-to-top,.show-scrollTop{transition:all .2s ease-in-out;background-color:#0077b5}.show-scrollTop{opacity:1}
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
