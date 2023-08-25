@@ -106,8 +106,32 @@
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
+    </url>
+   <url>
+    <loc>https://www.factyard.com/#/blog/page/14/blogs/others/celebrate-independence-day-with-har-ghar-tiranga</loc>
+    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
     <url>
+    <loc>https://www.factyard.com/#/blog/page/15/blogs/science/preserving-intimacy-the-ever-changing-landscape-of-privacy</loc>
+    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://www.factyard.com/#/blog/page/16/blogs/lifestyle/from-90s-to-gen-z-love-languages</loc>
+    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://www.factyard.com/#/blog/page/17/blogs/health/from-tap-to-sparkle-7-water-varieties</loc>
+    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <!-- <url>
     <loc>https://www.factyard.com/#/blog/page/1</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
@@ -208,29 +232,6 @@
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.factyard.com/#/blog/page/14/blogs/others/celebrate-independence-day-with-har-ghar-tiranga</loc>
-    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-    <url>
-    <loc>https://www.factyard.com/#/blog/page/15/blogs/science/preserving-intimacy-the-ever-changing-landscape-of-privacy</loc>
-    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-    <url>
-    <loc>https://www.factyard.com/#/blog/page/16/blogs/lifestyle/from-90s-to-gen-z-love-languages</loc>
-    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://www.factyard.com/#/blog/page/17/blogs/health/from-tap-to-sparkle-7-water-varieties</loc>
-    <lastmod>2023-08-05T00:00:00+00:00</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
+  </url> -->
+
 </urlset>
