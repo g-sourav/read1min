@@ -131,7 +131,7 @@
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
-    <!-- <url>
+    <url>
     <loc>https://www.factyard.com/#/blog/page/1</loc>
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
@@ -232,6 +232,6 @@
     <lastmod>2023-08-05T00:00:00+00:00</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
-  </url> -->
+  </url>
 
 </urlset>
