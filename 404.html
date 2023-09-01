@@ -3,6 +3,12 @@
 
 <head>
   <style type="text/css">
+    .site-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
     .footer {
     padding: 20px 0;
     background-color: #222;
@@ -29,8 +35,8 @@
   }
 /* footer.component.css */
 .footer-links a {
-  color: grey;
-  opacity: 0.6;
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
   text-decoration: none;
   position: relative;
   transition: opacity 0.3s, color 0.3s; /* Add transitions for opacity and color */
@@ -43,7 +49,7 @@
   height: 1px;
   bottom: -2px;
   left: 0;
-  background-color: grey;
+  background-color: rgb(227, 224, 224);
   transform: scaleX(0); /* Initially hidden */
   transform-origin: right;
   transition: transform 0.3s ease-out; /* Add transition for animation */
@@ -51,7 +57,7 @@
 
 .footer-links a:hover {
   opacity: 1;
-  color: grey; /* Adjust color for consistency */
+  color: rgb(210, 206, 206); /* Adjust color for consistency */
 }
 
 .footer-links a:hover::after {
@@ -72,10 +78,6 @@
 var popup;
 window.addEventListener('load', function(){
   window.cookieconsent.initialise({
-   //set revokeBtn if you don't want to see a tiny pullup bar overlapping your website
-   //if revokeBtn is set, make sure to include a link to cookie settings in your footer
-   //you can open your banner again with: popup.open();
-   //revokeBtn: "<div class='cc-revoke'></div>",
    type: "Implied Consent (opt-out)",
    theme: "classic",
    palette: {
@@ -101,7 +103,6 @@ window.addEventListener('load', function(){
   },
   
     onInitialise: function(status) {
-      // request gtag.js on page-load when the client already consented
       if(status == cookieconsent.status.allow) setCookies();
     },
     onStatusChange: function(status) {
@@ -109,28 +110,19 @@ window.addEventListener('load', function(){
                     if (cookieConsentBanner) {
                         cookieConsentBanner.style.display = "none";
                     }
-      // resquest gtag cookies on a new consent
       if (this.hasConsented()) setCookies();
       else deleteCookies(this.options.cookie.name)
     },
-/* enable this to hide the cookie banner outside GDPR regions
-    law: {
-      regionalLaw: false,
-    },
-    location: true,
-    },
-*/
+
     function (p) {
         popup = p;
     }
   })
 });
-
-//it is absolutely crucial to define gtag in the global scope
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-PMK91XX77T', {'anonymize_ip': true});
+gtag('config', 'G-058C2GFCEQ', {'anonymize_ip': true});
 
 function setCookies() {
     var s = document.createElement('script');
@@ -139,8 +131,6 @@ function setCookies() {
     s.src = "https://www.googletagmanager.com/gtag/js?id=G-058C2GFCEQ";
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
-
-    // you can add facebook-pixel and other cookies here
 };
 
 function deleteCookies(cookieconsent_name) {
@@ -158,31 +148,14 @@ function deleteCookies(cookieconsent_name) {
 
 <body>
 
-  <app-root></app-root>
+  <div class="site-content">
+    <app-root></app-root>
+  </div>
 
-    <!-- <script>
-      (function(rmcgo){
-      var d = document,
-          s = d.createElement('script'),
-          l = d.scripts[d.scripts.length - 1];
-      s.settings = rmcgo || {};
-      s.src = "\/\/peskycrash.com\/b-XfV.ssdwGhl\/0pY\/WydViBYdW\/5suHZNXeIh\/ye-mY9\/uiZDUXllk\/PhTFQ\/4kM\/T\/cy0mOXTokft\/NfD\/gKxQNlzQU\/w\/MpAs";
-      l.parentNode.insertBefore(s, l);
-      })({})
-      </script> -->
-  <!-- <script>
-    (function(__htavim){
-    var d = document,
-        s = d.createElement('script'),
-        l = d.scripts[d.scripts.length - 1];
-    s.settings = __htavim || {};
-    s.src = "\/\/crisp-freedom.com\/dymSF.zOd\/GclAtkPM3XpsvabAm\/V\/JOZzDZ0-0TOFDDEY3fNgzcMtz\/LXTXQG4kMBT-c\/3aM\/zoQY";
-    l.parentNode.insertBefore(s, l);
-    })()
-    </script> -->
-  <!-- <script async="async" data-cfasync="false" src="//pl20293264.highcpmrevenuegate.com/46ab8584ace2fa60ebf8b045b70155a1/invoke.js"></script>
-  <div id="container-46ab8584ace2fa60ebf8b045b70155a1"></div> 
-   <script type="text/javascript">
+   
+  <script async="async" data-cfasync="false" src="//pl20293264.highcpmrevenuegate.com/46ab8584ace2fa60ebf8b045b70155a1/invoke.js"></script>
+  <div id="container-46ab8584ace2fa60ebf8b045b70155a1"></div>
+   <!-- <script type="text/javascript">
   atOptions = {
     'key' : 'b1d9d3c7cf7caae790719e2cf6342598',
     'format' : 'iframe',
@@ -191,7 +164,7 @@ function deleteCookies(cookieconsent_name) {
     'params' : {}
   };
   document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitablecreativeformat.com/b1d9d3c7cf7caae790719e2cf6342598/invoke.js"></scr' + 'ipt>');
-  </script>  -->
+  </script>   -->
   
   <script type="text/javascript">
   atOptions = {
@@ -217,7 +190,7 @@ function deleteCookies(cookieconsent_name) {
   <!-- //adcash -->
   <!-- <script data-cfasync="false" type="text/javascript" src="//predictivadnetwork.com/a/display.php?r=7338478"></script>
   <script data-cfasync="false" type="text/javascript" data-adel="atag" src="//achcdn.com/script/atg.js" czid="mhehifu4nb"></script> -->
-  <footer class="bg-dark text-white">
+  <footer class="bg-dark text-white mt-3">
   <div class="container py-4">
     <div class="row">
       <div class="col-md-4">
@@ -231,9 +204,9 @@ function deleteCookies(cookieconsent_name) {
       <div class="col-md-4">
         <h5>Legal</h5>
         <ul class="list-unstyled footer-links">
-          <li><a href="https://www.factyard.com/cookie_policy.html" target="_blank">Policy</a></li>
-          <li><a href="https://www.factyard.com/cookie_policy.html" target="_blank">Cookie</a></li>
-          <li><a href="https://www.factyard.com/cookie_policy.html" target="_blank">Disclaimer</a></li>
+          <li><a href="https://www.factyard.com/cookie_policy.html" target="_blank">Cookie Policy</a></li>
+          <li><a href="https://www.factyard.com/privacy_policies.html" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://www.factyard.com/disclaimer.html" target="_blank">Disclaimer</a></li>
         </ul>
       </div>
       <div class="col-md-4">
@@ -252,9 +225,7 @@ function deleteCookies(cookieconsent_name) {
 
   <!-- <script type='text/javascript' src='//pl20293254.highcpmrevenuegate.com/77/0a/cd/770acdf41f4beb7400902948606af66d.js'></script> -->
 
-<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.daf8130ab8f17a1b6340.js" defer></script><script src="scripts.df6aa4c57c0545a6eef7.js" defer></script><script src="main.b4b142655a8ec549e34b.js" defer></script></body>
- <!-- Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
+<script src="runtime.7b63b9fd40098a2e8207.js" defer></script><script src="polyfills.daf8130ab8f17a1b6340.js" defer></script><script src="scripts.df6aa4c57c0545a6eef7.js" defer></script><script src="main.effc4c7fc53cf5cff4ba.js" defer></script></body>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-058C2GFCEQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -263,9 +234,5 @@ function deleteCookies(cookieconsent_name) {
 
   gtag('config', 'G-058C2GFCEQ');
 </script>
-<!-- End Google Tag Manager -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
   
 </html>
