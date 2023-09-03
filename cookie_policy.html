@@ -59,6 +59,33 @@
 </head>
 
 <body>
+    
+<script>
+    function loadSuggestedBlogs() {
+             fetch("assets/testtd.json")
+            .then(response => response.json())
+            .then(data => {
+                const suggestedBlogs = document.getElementById('suggestedBlogs');
+                let html = '';
+
+                data.forEach(blog => {
+                    html += '<div class="card mb-3">';
+                    html += '<div class="card-body">';
+                    html += '<h5 class="card-title">' + blog.title + '</h5>';
+                    html += '<p class="card-text">' + blog.summary + '</p>';
+                    html += '</div>';
+                    html += '</div>';
+                });
+
+                suggestedBlogs.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Failed to load suggested blogs:', error);
+            });
+    }
+
+loadSuggestedBlogs();
+</script>
     <div data-custom-class="body">
         <div><strong><span style="font-size: 26px;"><span data-custom-class="title">COOKIE POLICY</span></span></strong></div>
         <div><br></div>
