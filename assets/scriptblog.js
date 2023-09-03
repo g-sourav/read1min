@@ -1,6 +1,6 @@
 
 function loadSuggestedBlogs() {
-         fetch("testtd.json")
+         fetch("../../assets/testtd.json")
         .then(response => response.json())
         .then(data => {
             const suggestedBlogs = document.getElementById('suggestedBlogs');
