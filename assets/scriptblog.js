@@ -253,7 +253,7 @@ function insertContentNav() {
     var content = `
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand ml-4" href="/">
-      <img width="22" height="30" src="assets/favicon2.png" alt="" />
+      <img width="22" height="30" src="../../assets/favicon2.png" alt="" />
       FactYard</a
     >
     <button
