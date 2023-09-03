@@ -7,7 +7,10 @@ script1.src = '//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconse
 
 // Create a new <script> element for the second external script
 var script2 = document.createElement('script');
-script2.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js';
+script2.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js';
+script2.integrity='sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm';
+script2.setAttribute('crossorigin', 'anonymous');
+
 
 var script3 = document.createElement('script');
 script3.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
@@ -117,13 +120,20 @@ function loadSuggestedBlogs() {
                 //card.classList.add('col-md-4', 'mb-4');
                     const item= data[i];
                 card.innerHTML = `
-                    <div class="sug-card rounded bg-white mt-1">
-                        <img src="${item.image}" class="card-img" alt="${item.title}">
-                        <div class="card-body ml-1">
-                            <h6 class="card-title"><a href="/${item.dataPath}" target="_blank">${item.title}</a></h6>
-                            <p class="card-text mt-2">Date: ${item.date}</p>
-                        </div>
-                    </div>
+                <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-lg-4">
+    <img src="${item.image}" class="img-fluid rounded-start"  alt="${item.title}">
+    </div>
+    <div class="col-lg-8">
+      <div class="card-body">
+        <p class="card-title"><a href="/${item.dataPath}" target="_blank">${item.title}</a></p>
+        <p class="card-text"><small class="text-muted">Date: ${item.date}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+                  
                 `;
         
                 // Append the card to the container
@@ -251,74 +261,41 @@ function loadadsteraad() {
 //header
 function insertContentNav() {
     var content = `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand ml-4" href="/">
-      <img width="22" height="30" src="../../assets/favicon2.png" alt="" />
-      FactYard</a
-    >
-    <button
-      class="navbar-toggler ml-auto"
-      type="button"
-      data-toggle="collapse"
-      data-target=".navbar-collapse"
-      style="float: right"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li
-          class="nav-item"
-          data-toggle="collapse"
-          data-target=".navbar-collapse.show"
-        >
-          <a
-            class="nav-link"
-            href="www.factyard.com"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="www.factyard.com/blog"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-            >Blog</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="www.factyard.com/quizplay"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-            >Quiz</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="www.factyard.com/about"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-            >About</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="/contact"
-            data-toggle="collapse"
-            data-target=".navbar-collapse.show"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.factyard.com">
+        <img width="22" height="30" src="../../assets/favicon2.png" alt="" />
+        FactYard</a
+      >          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+            
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img width="22" height="30" src="../../assets/favicon2.png" alt="" />    FACTYARD</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="https://factyard.com/blog" >Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://factyard.com/quizplay">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://factyard.com/about" >About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://factyard.com/contact">Contact</a>
+            </li>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
     `;
     
     // Find the target div by its ID
